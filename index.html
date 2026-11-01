@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Ejemplo</title>
+  <meta name="description" content="Página de práctica para una cafetería ficticia. El negocio y el contenido son inventados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Figtree:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#inicio">Café Ejemplo</a>
+    <nav aria-label="Principal">
+      <a href="#menu">Menú</a>
+      <a href="#horario">Horario</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <p class="estado" id="estado" aria-live="polite">Revisando horario…</p>
+        <h1>Café de la mañana, sin apuros.</h1>
+        <p class="lead">Granos tostados cada semana, pan del día y una mesa tranquila para trabajar o conversar.</p>
+        <a class="btn" href="#menu">Ver el menú</a>
+      </div>
+      <aside class="hoy" aria-label="Horario de hoy">
+        <p class="etiqueta">Hoy</p>
+        <p class="hoy-dia" id="hoy-dia">—</p>
+        <p class="hoy-horas" id="hoy-horas">—</p>
+      </aside>
+    </section>
+
+    <section id="menu">
+      <h2>Menú</h2>
+      <div class="tabs" role="group" aria-label="Categorías del menú" id="tabs"></div>
+      <ul class="platos" id="platos"></ul>
+    </section>
+
+    <section id="horario">
+      <h2>Horario</h2>
+      <table>
+        <caption class="solo-lectores">Horario de atención por día</caption>
+        <thead><tr><th scope="col">Día</th><th scope="col">Atención</th></tr></thead>
+        <tbody id="tabla-horario"></tbody>
+      </table>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p class="aviso">Esta es una página de práctica. El formulario valida los datos, pero no envía mensajes.</p>
+      <form id="formulario" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          <p class="error" id="error-nombre" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" required>
+          <p class="error" id="error-correo" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <p class="error" id="error-mensaje" role="alert"></p>
+        </div>
+        <button class="btn" type="submit">Enviar</button>
+        <p class="ok" id="ok" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Café Ejemplo es un negocio ficticio. Proyecto de práctica de Benjamín Cáceres.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
